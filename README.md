@@ -18,6 +18,8 @@ AlphaGo Zero can be divided into 4 phases: **Selection, Expansion and Evaluation
 
 ### Selection
 
+<img src="Result_Presentation\Selection.png" width="400">
+
 The selection is the first step of the Monte Carlo Tree Search. In a complete simulation, we start the simulation at the root node $s_0$, and reach a leaf node $s_L$ at time-step $L$. (There are two kinds of leaf node $s_L$: first one is a node that has not been expanded and doesn't have child nodes, the second one satisfies the simulation finish condition, and the game is finished.)
 
 In each time-step before time-step $L$, an action based on the statistic of Monte Carlo Tree Search will be selected by the following equation.
@@ -38,6 +40,8 @@ In other words, the strategies both have exploration and exploitation tendencies
 
 ### Expansion and Evaluation
 
+<img src="Result_Presentation\Expansion.png" width="400">
+
 The first kind of leaf node $s_L$, which has not been extended and doesn't have child nodes, will be added to the neural network for evaluation.
 
 $(d_i (p),v)=f_\theta (d_i (s_L))$
@@ -57,6 +61,8 @@ ${ N(s_t,a)=0, W(s_t,a)=0, Q(s_t,a)=0, P(s_t,a)=p_a }$
 Besides, $v$ will be backed up.
 
 ### Backup
+
+<img src="Result_Presentation\Backpropagation.png" width="400">
 
 The next phase is backup. The edge statistics will be updated in this step as follows.
 
@@ -85,4 +91,10 @@ Besides, if the root and best child values are lower than a threshold value v_re
 
 
 ## Result
+
+<img src="MCTS_code\movies\game_3.gif" width="400">
+
+<img src="MCTS_code\movies\game_8-gif" width="400">
+
+
 
