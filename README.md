@@ -4,7 +4,7 @@
 
 The algorithm of AlphaGo Zero can be divided into two primary parts: Monte Carlo Tree Search and Neural network. Monte Carlo Tree Search is an approach to finding optimal decisions. AlphaGo Zero algorithm uses a variant of the asynchronous policy and value Monte Carlo Tree Search algorithm (APV-MCTS). In this algorithm, each node $s$ represents a board state, and each node s in the MCTS has edges $(s,a)$ to represent an action a based on state node $s$, in which action $a \in A(s)$. ($A(s)$ is a set of all legal actions). Besides, each edge stores the following statistics.
 
-\{$N(s,a)$,$W(s,a)$,$Q(s,a)$,$P(s,a)$\}
+$N(s,a)$, $W(s,a)$, $Q(s,a)$, $P(s,a)$
 
 $N(s,a)$ is the visit count, which records the time of visiting node s and choosing action a.
 
