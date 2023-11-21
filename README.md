@@ -10,7 +10,7 @@ $N(s,a)$ is the visit count, which records the time of visiting node $s$ and cho
 
 $W(s,a)$ is the total action value.
 
-$Q(s,a)$ is the mean action value, which is W(s,a)/N(s,a).
+$Q(s,a)$ is the mean action value, which is $W(s,a)/N(s,a)$.
 
 $P(s,a)$ is the prior probability of selecting this edge.
 
@@ -30,7 +30,7 @@ $Q(s_t,a)$ is the mean action value mentioned above.
 
 $U(s_t,a)$ is a value that represents the level of preferring exploration.
 
-$c_puct$ is a constant to adjust the tendency to explore.
+$c_{puct}$ is a constant to adjust the tendency to explore.
 
 $Q(s_t,a)$ is affected by the performance of the action, $U(s_t,a)$ is dependent on the visit count and prior probability, representing the exploration level. Consequently, this algorithm will prefer actions with low visit count, high prior probability, and high action value.
 
