@@ -94,7 +94,7 @@ Besides, if the root and best child values are lower than a threshold value v_re
 
 <img src="MCTS_code\movies\game_3.gif" width="400">
 
-<img src="MCTS_code\movies\game_8-gif" width="400">
+<img src="MCTS_code\movies\game_8.gif" width="400">
 
 
 
