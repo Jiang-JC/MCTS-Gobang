@@ -6,7 +6,7 @@ The algorithm of AlphaGo Zero can be divided into two primary parts: Monte Carlo
 
 { $N(s,a)$, $W(s,a)$, $Q(s,a)$, $P(s,a)$ }
 
-$N(s,a)$ is the visit count, which records the time of visiting node s and choosing action a.
+$N(s,a)$ is the visit count, which records the time of visiting node $s$ and choosing action $a$.
 
 $W(s,a)$ is the total action value.
 
@@ -16,12 +16,11 @@ $P(s,a)$ is the prior probability of selecting this edge.
 
 Monte Carlo Tree Search can be divided into 4 phases: **Selection, Expansion, Simulation, and Backpropagation**. We will introduce each part as follows.
 
-### Select
+### Selection
 
-The selection is the first step of the Monte Carlo Tree Search. In a complete simulation, we start the simulation at the root node s_0, and reach a leaf node s_L at time-step L. (There are two kinds of leaf node s_L: first one is a node that has not been expanded and doesn't have child nodes, the second one satisfies the simulation finish condition, and the game is finished.)
+The selection is the first step of the Monte Carlo Tree Search. In a complete simulation, we start the simulation at the root node $s_0$, and reach a leaf node $s_L$ at time-step $L$. (There are two kinds of leaf node $s_L$: first one is a node that has not been expanded and doesn't have child nodes, the second one satisfies the simulation finish condition, and the game is finished.)
 
-In each time-step before time-step L, an action based on the statistic of Monte Carlo Tree Search will be selected by the 
-following equation.
+In each time-step before time-step $L$, an action based on the statistic of Monte Carlo Tree Search will be selected by the following equation.
 
 $s_t=\underset {a}{argmax}(Q(s_t,a)+U(s_t,a))$
 
@@ -37,7 +36,7 @@ $Q(s_t,a)$ is affected by the performance of the action, $U(s_t,a)$ is dependent
 
 In other words, the strategies both have exploration and exploitation tendencies (exploration means preferring non-explored action, and exploitation means preferring best-known action). The algorithm will make a trade-off between them, which will be affected by some parameters, for example, changing the number of $c_puct$ will make a great difference.
 
-### Expand and Evaluate
+### Expansion
 The first kind of leaf node $s_L$, which has not been extended and doesn't have child nodes, will be added to the neural network for evaluation.
 
 $(d_i (p),v)=f_θ (d_i (s_L))$
@@ -50,7 +49,7 @@ ${ N(s_t,a)=0, W(s_t,a)=0, Q(s_t,a)=0, P(s_t,a)=p_a }$
 
 Besides, $v$ will be backed up.
 
-### Backup
+### Simulation
 
 The next phase is backup. The edge statistics will be updated in this step as follows.
 
@@ -62,7 +61,7 @@ $Q(s_t,a_t )=  ( W(s_t,a_t ))/(N(s_t,a_t))$
 
 There are two significant features of backup. Firstly, the edge update will backtrack from the leaf node $s_L$ until the root node $s_0$; secondly, we use virtual loss $v$ to update edges, ensuring that each thread can evaluate different nodes.
 
-### Play
+### Backpropagation
 
 AlphaGo Zero will select an action a in the root node s_0 at the end of the search, which is proportional to its exponentiated visit count.
 
