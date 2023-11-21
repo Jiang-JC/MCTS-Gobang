@@ -22,9 +22,13 @@ The selection is the first step of the Monte Carlo Tree Search. In a complete si
 
 In each time-step before time-step L, an action based on the statistic of Monte Carlo Tree Search will be selected by the following equation.
 s_t=argmax┬a (Q(s_t,a)+U(s_t,a))
-U(s,a)=c_puct P(s,a)√(∑_b▒〖N(s,b)〗)/(1+N(s,a))
+$U(s,a)=c_puct P(s,a)√(∑_b▒〖N(s,b)〗)/(1+N(s,a))$
 Q(s_t,a) is the mean action value mentioned above.
 U(s_t,a) is a value that represents the level of preferring exploration.
 c_puct is a constant to adjust the tendency to explore.
 Q(s_t,a) is affected by the performance of the action, U(s_t,a) is dependent on the visit count and prior probability, representing the exploration level. Consequently, this algorithm will prefer actions with low visit count, high prior probability, and high action value.
- In other words, the strategies both have exploration and exploitation tendencies (exploration means preferring non-explored action, and exploitation means preferring best-known action). The algorithm will make a trade-off between them, which will be affected by some parameters, for example, changing the number of c_puct will make a great difference.
+In other words, the strategies both have exploration and exploitation tendencies (exploration means preferring non-explored action, and exploitation means preferring best-known action). The algorithm will make a trade-off between them, which will be affected by some parameters, for example, changing the number of c_puct will make a great difference.
+
+
+
+ 
