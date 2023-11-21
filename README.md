@@ -66,7 +66,8 @@ There are two significant features of backup. Firstly, the edge update will back
 
 AlphaGo Zero will select an action a in the root node s_0 at the end of the search, which is proportional to its exponentiated visit count.
 
-π(a|s_0 )=〖N(s_0,a)〗^(1/τ)/(∑_b▒〖N(s_0,b)〗^(1/τ) )
+$\pi(a|s_0 )=\frac{N(s_0,a)^{\frac{1}{\tau}}}{\sum_b {N(s_0,b)^\frac{1}{\tau}}}$
+
 
 $τ$ is a temperature parameter that can adjust the level of exploration.
 
