@@ -14,7 +14,7 @@ $Q(s,a)$ is the mean action value, which is $W(s,a)/N(s,a)$.
 
 $P(s,a)$ is the prior probability of selecting this edge.
 
-Monte Carlo Tree Search can be divided into 4 phases: **Selection, Expansion, Simulation, and Backpropagation**. We will introduce each part as follows.
+MCTS can be divided into 4 phases: **Selection, Expansion, Simulation, and Backpropagation**. We will introduce each part as follows.
 
 ### Selection
 
