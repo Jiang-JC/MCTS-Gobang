@@ -6,13 +6,13 @@ The algorithm of AlphaGo Zero can be divided into two primary parts: Monte Carlo
 
 { $N(s,a)$, $W(s,a)$, $Q(s,a)$, $P(s,a)$ }
 
-$N(s,a)$: is the visit count, which records the time of visiting node s and choosing action a.
+$N(s,a)$ is the visit count, which records the time of visiting node s and choosing action a.
 
 $W(s,a)$ is the total action value.
 
-Q(s,a) is the mean action value, which is W(s,a)/N(s,a).
+$Q(s,a)$ is the mean action value, which is W(s,a)/N(s,a).
 
-P(s,a) is the prior probability of selecting this edge.
+$P(s,a)$ is the prior probability of selecting this edge.
 
 Monte Carlo Tree Search can be divided into 4 phases: Select, Expand and Evaluate, Backup, and Play. We will introduce each part as follows.
 
