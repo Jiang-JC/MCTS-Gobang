@@ -6,7 +6,7 @@ The algorithm of AlphaGo Zero can be divided into two primary parts: Monte Carlo
 
 { $N(s,a)$, $W(s,a)$, $Q(s,a)$, $P(s,a)$ }
 
-$N(s,a)$ is the visit count, which records the time of visiting node s and choosing action a.
+$N(s,a)$: is the visit count, which records the time of visiting node s and choosing action a.
 
 $W(s,a)$ is the total action value.
 
