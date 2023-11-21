@@ -22,7 +22,7 @@ The selection is the first step of the Monte Carlo Tree Search. In a complete si
 
 In each time-step before time-step $L$, an action based on the statistic of Monte Carlo Tree Search will be selected by the following equation.
 
-$s_t=\underset {a}{argmax}(Q(s_t,a)+U(s_t,a))$
+$a^*=\underset {a}{argmax}(Q(s_t,a)+U(s_t,a))$
 
 $U(s,a)=c_{puct}P(s,a)\frac{\sqrt{\sum_b N(s,b)}}{1 + N(s,a)}$
 
