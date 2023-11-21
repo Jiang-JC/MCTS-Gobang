@@ -1,6 +1,6 @@
 # MCTS-Gobang
 
-## Monte Carlo Tree Search Concept
+## AlphaGo Zero Concept
 
 The algorithm of AlphaGo Zero can be divided into two primary parts: Monte Carlo Tree Search (MCTS) and Neural network. MCTS is an approach to finding optimal decisions. AlphaGo Zero algorithm uses a variant of the asynchronous policy and value Monte Carlo Tree Search algorithm (APV-MCTS). In this algorithm, each node $s$ represents a board state, and each node s in the MCTS has edges $(s,a)$ to represent an action a based on state node $s$, in which action $a \in A(s)$. ($A(s)$ is a set of all legal actions). Besides, each edge stores the following statistics.
 
@@ -83,4 +83,6 @@ The Monte Carlo Tree will be reused at subsequent time-steps, and the child node
 
 Besides, if the root and best child values are lower than a threshold value v_resign, AlphaGo Zero will resign.
 
- 
+
+## Result
+
