@@ -37,7 +37,7 @@ $Q(s_t,a)$ is affected by the performance of the action, $U(s_t,a)$ is dependent
 
 In other words, the strategies both have exploration and exploitation tendencies (exploration means preferring non-explored action, and exploitation means preferring best-known action). The algorithm will make a trade-off between them, which will be affected by some parameters, for example, changing the number of $c_puct$ will make a great difference.
 
-## Expand and Evaluate
+### Expand and Evaluate
 The first kind of leaf node $s_L$, which has not been extended and doesn't have child nodes, will be added to the neural network for evaluation.
 
 $(d_i (p),v)=f_θ (d_i (s_L))$
@@ -50,7 +50,8 @@ ${ N(s_t,a)=0, W(s_t,a)=0, Q(s_t,a)=0, P(s_t,a)=p_a }$
 
 Besides, $v$ will be backed up.
 
-Backup
+### Backup
+
 The next phase is backup. The edge statistics will be updated in this step as follows.
 
 $N(s_t,a_t )= N(s_t,a_t )+1$
@@ -61,7 +62,7 @@ $Q(s_t,a_t )=  ( W(s_t,a_t ))/(N(s_t,a_t))$
 
 There are two significant features of backup. Firstly, the edge update will backtrack from the leaf node $s_L$ until the root node $s_0$; secondly, we use virtual loss $v$ to update edges, ensuring that each thread can evaluate different nodes.
 
-## Play
+### Play
 
 AlphaGo Zero will select an action a in the root node s_0 at the end of the search, which is proportional to its exponentiated visit count.
 
