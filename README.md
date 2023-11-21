@@ -30,7 +30,7 @@ $Q(s_t,a)$ is the mean action value mentioned above.
 
 $U(s_t,a)$ is a value that represents the level of preferring exploration.
 
-$c_{puct}$ is a constant to adjust the tendency to explore.
+$c_{puct} $ is a constant to adjust the tendency to explore.
 
 $Q(s_t,a)$ is affected by the performance of the action, $U(s_t,a)$ is dependent on the visit count and prior probability, representing the exploration level. Consequently, this algorithm will prefer actions with low visit count, high prior probability, and high action value.
 
@@ -53,11 +53,11 @@ Besides, $v$ will be backed up.
 
 The next phase is backup. The edge statistics will be updated in this step as follows.
 
-$N(s_t,a_t )= N(s_t,a_t )+1$
+$N(s_t,a_t) = N(s_t,a_t )+1$
 
-$W(s_t,a_t )= W(s_t,a_t )+ v$
+$W(s_t,a_t) = W(s_t,a_t )+ v$
 
-$Q(s_t,a_t )=  ( W(s_t,a_t ))/(N(s_t,a_t))$
+$Q(s_t,a_t) = (W(s_t,a_t))/(N(s_t,a_t))$
 
 There are two significant features of backup. Firstly, the edge update will backtrack from the leaf node $s_L$ until the root node $s_0$; secondly, we use virtual loss $v$ to update edges, ensuring that each thread can evaluate different nodes.
 
